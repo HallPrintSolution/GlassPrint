@@ -1,0 +1,149 @@
+# GlassPrint Technical Modernization
+
+GlassPrint Technical Modernization is an engineering initiative to improve the technical quality, accessibility, search visibility, performance, and maintainability of the GlassPrint website while preserving its current visual design and user experience. This document serves as the permanent engineering log for all audited, approved, and implemented changes.
+
+---
+
+## Project Objectives
+
+- Improve technical SEO
+- Improve accessibility
+- Improve HTML semantics
+- Improve performance
+- Preserve the current visual design
+- Produce a maintainable codebase
+- Document every approved change
+
+---
+
+## Working Rules
+
+- Every change must begin with an audit.
+- No visual changes unless explicitly approved.
+- One problem = one implementation.
+- One implementation = one review.
+- One review = one commit.
+- Every approved change must be documented here.
+
+---
+
+# Progress
+
+## ✅ GP-001 — HTML Structure Repair
+
+Status:  
+Completed
+
+Commit:  
+22624e0
+
+Summary:
+
+- Removed nested HTML document.
+- Restored valid HTML structure.
+- Preserved FAQ functionality.
+- Preserved visual appearance.
+
+Business Impact:
+
+- Better HTML validity
+- Better SEO
+- Better compatibility with search engines
+
+---
+
+## ✅ GP-002 — Heading Hierarchy
+
+Status:  
+Completed
+
+Commit:  
+(To be filled after commit)
+
+Files:
+
+- index.html
+- styles.css
+
+Summary:
+
+- Converted seven H4 headings to H3.
+- Added scoped CSS override.
+- Preserved pixel-identical appearance.
+- Improved semantic heading hierarchy.
+
+Business Impact:
+
+- Better accessibility
+- Better SEO
+- Improved semantic structure
+
+---
+
+# Planned Tasks
+
+| ID | Task | Status |
+|----|------|--------|
+| GP-003 | Add main landmark | Planned |
+| GP-004 | Improve FAQ heading | Planned |
+| GP-005 | GTM validation | Planned |
+| GP-006 | Analytics validation | Planned |
+| GP-007 | Meta tags review | Planned |
+| GP-008 | Canonical review | Planned |
+| GP-009 | Open Graph review | Planned |
+| GP-010 | Twitter Cards | Planned |
+| GP-011 | Performance optimisation | Planned |
+| GP-012 | Image optimisation | Planned |
+| GP-013 | Lighthouse improvements | Planned |
+
+---
+
+# Change Log
+
+Reserve this section for future approved changes.
+
+Each new change should follow this template:
+
+## GP-XXX
+
+Date:
+
+Commit:
+
+Files Modified:
+
+Problem:
+
+Solution:
+
+Business Impact:
+
+Technical Notes:
+
+Status:
+
+---
+
+# Branch Strategy
+
+`main`  
+Production-ready branch.
+
+`seo-fixes-fase-1`  
+Engineering branch used for technical improvements.
+
+No direct commits should be made to `main`.
+
+---
+
+# Quality Standard
+
+Every change must satisfy ALL of the following:
+
+- No unexpected visual regressions.
+- Accessibility preserved or improved.
+- SEO preserved or improved.
+- Responsive behaviour preserved.
+- Existing functionality preserved.
+- Reviewed before commit.
+
