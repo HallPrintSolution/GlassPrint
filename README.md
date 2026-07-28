@@ -247,6 +247,46 @@ Completed — awaiting review and commit.
 
 ---
 
+## GP-V03 — Mobile Horizontal Overflow Repair
+
+Date:
+
+2026-07-28
+
+Commit:
+
+(To be filled after commit)
+
+Files Modified:
+
+- styles.css
+- README.md
+
+Problem:
+
+At narrow mobile widths, conflicting grid rules, fixed-size children, flex minimum sizing and horizontal entrance transforms caused cards, headings and text to extend beyond the viewport.
+
+Root Causes:
+
+- A later two-column global grid rule overrode the earlier narrow-screen single-column rule.
+- Product cards combined percentage widths and margins inside constrained grid tracks.
+- Horizontal entrance animations translated content up to 200 pixels outside its container.
+- Flex and grid children retained intrinsic minimum widths that prevented wrapping and shrinking.
+
+Implementation:
+
+Added scoped responsive containment rules, converted Industries to one column, stabilised the two-column product grid, constrained cards and product details, enabled safe text wrapping and replaced horizontal mobile entrance motion with a vertical fade.
+
+Expected UX and Commercial Impact:
+
+Mobile visitors can view complete content and controls without horizontal scrolling, improving product discovery, readability and conversion confidence.
+
+Status:
+
+Completed — awaiting review and commit.
+
+---
+
 Each new change should follow this template:
 
 ## GP-XXX

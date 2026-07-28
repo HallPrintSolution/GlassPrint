@@ -1591,3 +1591,118 @@ h2 {
         animation: none;
     }
 }
+
+/* Narrow viewport containment */
+@keyframes mobileFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .animate-about-us-image,
+    .animate-about-us-text,
+    .animate-core-value,
+    .animate-support-local {
+        animation-name: mobileFadeIn;
+    }
+
+    .about-topic,
+    .about-topic > div,
+    .values-container,
+    .value,
+    .product-about-section,
+    .product-description,
+    .productfeature {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section,
+    .container,
+    .full-width-background,
+    .recent-work-inner,
+    .product-about-section,
+    .product-details {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .grid,
+    .industries .grid {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    .industries .image-container-wrapper {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .industries .grid .image-container {
+        width: 100%;
+        max-width: 295px;
+        height: auto;
+        aspect-ratio: 295 / 190;
+    }
+
+    .products-services .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .products-services .button {
+        width: min(140px, 100%);
+        max-width: 100%;
+        margin: 0;
+        justify-self: center;
+    }
+
+    .product-about-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .productimage,
+    .product-description {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .product-button {
+        width: 100%;
+        max-width: 265px;
+    }
+
+    .about-topic,
+    .values-container,
+    .value {
+        max-width: 100%;
+    }
+
+    .about-topic h3,
+    .about-topic p,
+    .value h3,
+    .value p,
+    .section h2,
+    .product-description,
+    .productfeature {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .value:hover img {
+        transform: none;
+    }
+}
