@@ -176,6 +176,43 @@ Completed — awaiting review and commit.
 
 ---
 
+## GP-006 — Twitter Card Metadata
+
+Date:
+
+2026-07-28
+
+Commit:
+
+(To be filled after commit)
+
+Files Modified:
+
+- index.html
+- README.md
+
+Problem:
+
+The Twitter Card implementation declared the card type but did not provide explicit title, description, image or image alternative text.
+
+Solution:
+
+Added `twitter:title`, `twitter:description`, `twitter:image` and `twitter:image:alt` using the approved document and Open Graph values.
+
+Business Impact:
+
+More consistent, descriptive and accessible social sharing previews.
+
+Technical Notes:
+
+The Twitter values match the document title, meta description, Open Graph image and Open Graph image alternative text.
+
+Status:
+
+Completed — awaiting review and commit.
+
+---
+
 Each new change should follow this template:
 
 ## GP-XXX
