@@ -102,6 +102,43 @@ Business Impact:
 
 Reserve this section for future approved changes.
 
+## GP-004 — Title and Meta Description Optimisation
+
+Date:
+
+2026-07-28
+
+Commit:
+
+(To be filled after commit)
+
+Files Modified:
+
+- index.html
+- README.md
+
+Problem:
+
+The document title and meta description were longer than recommended for consistent presentation in search results.
+
+Solution:
+
+Replaced the title and meta description with the approved concise versions and aligned the corresponding Open Graph values.
+
+Business Impact:
+
+Clearer search and social preview messaging with a lower risk of truncation.
+
+Technical Notes:
+
+Canonical, social image, Twitter metadata, structured data, scripts, styles and body content were not changed.
+
+Status:
+
+Completed — awaiting review and commit.
+
+---
+
 Each new change should follow this template:
 
 ## GP-XXX
@@ -146,4 +183,3 @@ Every change must satisfy ALL of the following:
 - Responsive behaviour preserved.
 - Existing functionality preserved.
 - Reviewed before commit.
-
