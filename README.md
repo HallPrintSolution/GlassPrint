@@ -139,6 +139,43 @@ Completed — awaiting review and commit.
 
 ---
 
+## GP-005 — Open Graph Metadata
+
+Date:
+
+2026-07-28
+
+Commit:
+
+(To be filled after commit)
+
+Files Modified:
+
+- index.html
+- README.md
+
+Problem:
+
+The core Open Graph implementation did not identify the site name or provide image accessibility and dimension metadata.
+
+Solution:
+
+Added the approved `og:site_name`, `og:image:alt`, `og:image:width` and `og:image:height` properties without changing the existing Open Graph values.
+
+Business Impact:
+
+More descriptive, accessible and predictable social sharing previews.
+
+Technical Notes:
+
+The declared Open Graph image dimensions match the existing 1900 × 840 pixel source image.
+
+Status:
+
+Completed — awaiting review and commit.
+
+---
+
 Each new change should follow this template:
 
 ## GP-XXX
