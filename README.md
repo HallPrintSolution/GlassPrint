@@ -213,6 +213,40 @@ Completed — awaiting review and commit.
 
 ---
 
+## GP-V02 — Hero Conversion Redesign
+
+Date:
+
+2026-07-28
+
+Commit:
+
+(To be filled after commit)
+
+Files Modified:
+
+- index.html
+- styles.css
+- README.md
+
+Problem:
+
+The homepage hero presented carousel imagery without a visible value proposition or an immediate conversion path.
+
+Implementation:
+
+Made the existing H1 visible, added approved supporting copy and introduced primary quote and secondary product CTAs using existing page targets. Added a scoped image overlay, responsive hero layout, keyboard focus styles and reduced-motion support while preserving the existing carousel.
+
+Expected Commercial Impact:
+
+Visitors can understand the core service immediately and reach quote or product content directly from the first screen.
+
+Status:
+
+Completed — awaiting review and commit.
+
+---
+
 Each new change should follow this template:
 
 ## GP-XXX

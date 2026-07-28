@@ -1364,3 +1364,230 @@ h2 {
 .more-questions:hover {
     background-color: #0a5a8a; /* Darker shade for hover */
 }
+
+/* Hero conversion content */
+.hero-banner {
+    height: clamp(430px, 44vw, 630px);
+    min-height: 430px;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(3, 45, 72, 0.86) 0%, rgba(5, 77, 113, 0.68) 48%, rgba(3, 45, 72, 0.42) 100%);
+}
+
+.hero-banner .carousel,
+.hero-banner .slides,
+.hero-banner .slide {
+    height: 100%;
+}
+
+.hero-banner .carousel .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: min(1200px, calc(100% - 120px));
+    color: #fff;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    animation: hero-content-enter 0.6s ease-out both;
+}
+
+.hero-content h1 {
+    max-width: 720px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.5rem, 4.3vw, 4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    max-width: 660px;
+    margin: 20px 0 0;
+    color: #fff;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.5;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.hero-cta-primary {
+    background-color: #8dc63f;
+    color: #fff;
+}
+
+.hero-cta-primary:hover {
+    background-color: #74a62d;
+}
+
+.hero-cta-secondary {
+    border-color: #fff;
+    background-color: transparent;
+    color: #fff;
+}
+
+.hero-cta-secondary:hover {
+    background-color: #fff;
+    color: #0e76bc;
+}
+
+.hero-cta:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 2px #0e76bc;
+}
+
+.hero-banner .carousel-indicators,
+.hero-banner .scroll-arrow {
+    z-index: 3;
+}
+
+@keyframes hero-content-enter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + 18px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 460px;
+        min-height: 460px;
+    }
+
+    .hero-content {
+        width: calc(100% - 96px);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.1rem, 7vw, 3rem);
+    }
+
+    .hero-banner .arrow {
+        top: auto;
+        bottom: 14px;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        height: 430px;
+        min-height: 430px;
+    }
+
+    .hero-banner::after {
+        background: rgba(3, 45, 72, 0.72);
+    }
+
+    .hero-content {
+        width: calc(100% - 56px);
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+    .hero-content p {
+        margin-top: 16px;
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .hero-cta {
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+
+    .hero-banner .arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-banner .arrow.prev {
+        left: 8px;
+    }
+
+    .hero-banner .arrow.next {
+        right: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-content {
+        animation: none;
+    }
+
+    .hero-cta {
+        transition: none;
+    }
+
+    .hero-cta:hover {
+        transform: none;
+    }
+
+    .hero-banner .carousel .slides {
+        transition: none !important;
+    }
+
+    .hero-banner .scroll-arrow {
+        animation: none;
+    }
+}
