@@ -278,14 +278,12 @@
     padding: clamp(68px, 8vw, 108px) 0;
 }
 
-.beer-traditional,
-.beer-process-section {
+.beer-traditional {
+    padding-bottom: clamp(64px, 6vw, 80px);
     background: var(--beer-light);
 }
 
 .beer-two-column,
-.beer-process-grid,
-.beer-template-layout,
 .beer-design-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -294,8 +292,6 @@
 }
 
 .beer-section-intro > p:not(.beer-eyebrow),
-.beer-process-grid > div > p,
-.beer-template-layout > div > p,
 .beer-design-grid > div > p,
 .beer-premium-intro > p,
 .beer-branding-panel > p {
@@ -313,8 +309,6 @@
     max-width: 900px;
 }
 
-.beer-spec-panel,
-.beer-artwork-panel,
 .beer-branding-panel {
     padding: clamp(28px, 4vw, 42px);
     border-top: 5px solid var(--beer-green-bright);
@@ -448,58 +442,54 @@
     text-transform: uppercase;
 }
 
-.beer-traditional-specification {
+.beer-mats-info-panel {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    gap: clamp(40px, 7vw, 86px);
-    margin-top: clamp(64px, 8vw, 96px);
-    padding-top: clamp(54px, 7vw, 80px);
-    border-top: 1px solid var(--beer-line);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1.2fr);
+    margin-top: clamp(40px, 4vw, 48px);
+    overflow: hidden;
+    border: 1px solid var(--beer-line);
+    border-radius: 12px;
+    background: var(--beer-white);
+    box-shadow: 0 14px 38px rgba(3, 45, 72, 0.07);
 }
 
-.beer-traditional-specification > div:first-child > p:not(.beer-eyebrow) {
+.beer-info-column {
+    min-width: 0;
+    padding: clamp(30px, 3vw, 40px) 32px;
+}
+
+.beer-info-column + .beer-info-column {
+    border-left: 1px solid var(--beer-line);
+}
+
+.beer-info-column h3 {
+    margin-bottom: 18px;
+    color: var(--beer-blue-dark);
+    font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+}
+
+.beer-info-column h4 {
+    margin: 26px 0 12px;
+    color: var(--beer-blue-dark);
+    font-size: 1rem;
+}
+
+.beer-info-column > p {
     color: var(--beer-muted);
 }
 
-.beer-process-grid {
-    align-items: center;
+.beer-info-emphasis {
+    color: var(--beer-ink) !important;
 }
 
-.beer-timeline {
-    display: flex;
-    min-height: 350px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 44px;
-    border-radius: 16px;
-    background: var(--beer-blue-dark);
-    color: var(--beer-white);
-    text-align: center;
-}
-
-.beer-timeline-number {
-    color: #b7e27c;
-    font-size: clamp(4rem, 9vw, 7.5rem);
-    font-weight: 700;
-    line-height: 0.9;
-}
-
-.beer-timeline strong {
-    margin-top: 12px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-.beer-timeline p {
-    max-width: 340px;
-    margin: 18px 0 0;
-    color: #e7f1f5;
+.beer-info-supporting {
+    margin-top: 18px;
+    font-size: 0.92rem;
 }
 
 .beer-template-actions {
     align-items: stretch;
+    margin-top: 14px;
 }
 
 .beer-button-disabled {
@@ -513,11 +503,6 @@
     margin-top: 12px;
     font-size: 0.88rem;
     font-weight: 700;
-}
-
-.beer-artwork-panel p {
-    margin: 24px 0 0;
-    color: var(--beer-muted);
 }
 
 .beer-design-section {
@@ -769,6 +754,16 @@
 }
 
 @media (max-width: 1120px) {
+    .beer-mats-info-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .beer-artwork-column {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--beer-line);
+        border-left: 0 !important;
+    }
+
     .beer-material-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -804,10 +799,7 @@
     }
 
     .beer-two-column,
-    .beer-process-grid,
-    .beer-template-layout,
-    .beer-design-grid,
-    .beer-traditional-specification {
+    .beer-design-grid {
         grid-template-columns: minmax(0, 1fr);
     }
 }
@@ -837,6 +829,19 @@
 
     .beer-page h2 {
         font-size: 1.9rem;
+    }
+
+    .beer-mats-info-panel {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .beer-info-column {
+        padding: 24px 22px;
+    }
+
+    .beer-info-column + .beer-info-column {
+        border-top: 1px solid var(--beer-line);
+        border-left: 0;
     }
 
     .beer-actions,

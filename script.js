@@ -47,6 +47,8 @@ const prevArrow = document.querySelector('.arrow.prev');
 const nextArrow = document.querySelector('.arrow.next');
 const totalSlides = slides.length;
 const beerCampaignIndex = totalSlides - 2;
+const carouselDwellTime = 8000;
+let carouselTimerId;
 
 function updateCarouselCampaignState(index) {
     const campaignIsActive = index === 0 || index === beerCampaignIndex;
@@ -92,11 +94,25 @@ function moveToPrevSlide() {
     }, 20);
 }
 
+function restartCarouselTimer() {
+    if (carouselTimerId) {
+        clearInterval(carouselTimerId);
+    }
+
+    carouselTimerId = setInterval(moveToNextSlide, carouselDwellTime);
+}
+
 // Event listener for previous arrow
-prevArrow.addEventListener('click', moveToPrevSlide);
+prevArrow.addEventListener('click', () => {
+    moveToPrevSlide();
+    restartCarouselTimer();
+});
 
 // Event listener for next arrow
-nextArrow.addEventListener('click', moveToNextSlide);
+nextArrow.addEventListener('click', () => {
+    moveToNextSlide();
+    restartCarouselTimer();
+});
 
 // Event listeners for indicators
 indicators.forEach((indicator, index) => {
@@ -104,13 +120,12 @@ indicators.forEach((indicator, index) => {
         carouselIndex = index + 1;
         moveToSlide(carouselIndex);
         updateCarouselIndicators(carouselIndex);
+        restartCarouselTimer();
     });
 });
 
 // Automatically cycle through images
-setInterval(() => {
-    moveToNextSlide();
-}, 4500);
+restartCarouselTimer();
 
 // Initial setup
 moveToSlide(carouselIndex);
