@@ -22,6 +22,7 @@ GlassPrint Technical Modernization is the audited engineering programme for impr
 | GP-SEC-001 | Legacy newsletter security remediation | Completed |
 | GP-HOTFIX-001 | Beer Mats promotional section | Completed |
 | GP-HOTFIX-002 | Contact and Request a Quote journey | Completed |
+| GP-HOTFIX-003 | Beer Mats product campaign | In review |
 | GP-R00 | Professional rebuild discovery and architecture audit | Planning |
 
 ## Project Objectives
@@ -180,11 +181,35 @@ Repository history may still contain previous secret material. Historical creden
 **Status:** Completed and merged into `main`
 **Commit:** `68efa827404f2aed5bddc4f09c54481a810a55ff`
 
+The temporary homepage section delivered by this task has been superseded by GP-HOTFIX-003. The completed commit remains part of the project history.
+
 - Delivered an urgent management request to promote Beer Mats.
 - Added a responsive promotional section immediately after the Hero.
 - Added a Request a Quote CTA, now routed to `contact.php#quote-form`.
 - Used a restrained, replacement-ready media treatment.
 - Final Beer Mats campaign artwork remains pending and can replace the placeholder without changing the layout.
+
+### GP-HOTFIX-003 — Beer Mats Product Campaign
+
+**Status:** Implemented on `hotfix/beer-mats-product-page`; awaiting review and production approval
+
+Management requested a stronger commercial Beer Mats journey for immediate production use. The temporary homepage promotional section was removed and superseded by a dedicated campaign slide in the existing Hero carousel.
+
+Implementation:
+
+- Added a Beer Mats Hero campaign slide linking to `beer-mats.html`.
+- Created a dedicated product page covering traditional 1.4 mm hospitality Beer Mats, round and square formats, lead time, artwork preparation and the Beer Mat design service.
+- Added the premium reusable coaster range with Recycled PET felt, cork, bamboo and PU leather material options.
+- Separated traditional absorbent Beer Mats and premium reusable coasters into two visually distinct product families with dedicated card grids and specifications.
+- Added central quotation CTAs for Beer Mats and premium coasters.
+- Added safe server-side Contact form preselection for both product categories.
+- Added `beer-mats.html` to the sitemap.
+
+Asset status:
+
+- No approved Beer Mats or premium-coaster campaign photography was present in the repository. Branded, image-ready CSS treatments are used without misleading product photography. Replacement assets are expected at `images/beer-mats/round-beer-mat.webp`, `images/beer-mats/square-beer-mat.webp`, `images/beer-mats/rpet-felt-coaster.webp`, `images/beer-mats/cork-coaster.webp`, `images/beer-mats/bamboo-coaster.webp` and `images/beer-mats/pu-leather-coaster.webp`.
+- Round and square artwork-template files were not present. The download controls remain visibly disabled and non-interactive until approved files are uploaded.
+- Recommended future filenames are `pdfs/round-beer-mat-template.pdf` and `pdfs/square-beer-mat-template.pdf`.
 
 ### GP-HOTFIX-002 — Contact and Request a Quote Journey
 

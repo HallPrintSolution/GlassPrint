@@ -46,6 +46,12 @@ const indicators = document.querySelectorAll('.carousel-indicators .indicator');
 const prevArrow = document.querySelector('.arrow.prev');
 const nextArrow = document.querySelector('.arrow.next');
 const totalSlides = slides.length;
+const beerCampaignIndex = totalSlides - 2;
+
+function updateCarouselCampaignState(index) {
+    const campaignIsActive = index === 0 || index === beerCampaignIndex;
+    document.querySelector('.hero-banner').classList.toggle('beer-mats-campaign-active', campaignIsActive);
+}
 
 function updateCarouselIndicators(index) {
     indicators.forEach(indicator => indicator.classList.remove('active'));
@@ -53,6 +59,7 @@ function updateCarouselIndicators(index) {
 }
 
 function moveToSlide(index) {
+    updateCarouselCampaignState(index);
     slidesContainer.style.transition = 'transform 0.5s ease-in-out';
     slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }

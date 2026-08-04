@@ -125,6 +125,7 @@ $allowedProducts = [
     'Plastic Drinkware',
     'Ceramics',
     'Beer Mats',
+    'Premium Reusable Coasters',
     'Bespoke / Special Project',
     'Other',
 ];

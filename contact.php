@@ -43,6 +43,14 @@ $errors = $_SESSION['quote_errors'] ?? [];
 $old = $_SESSION['quote_old'] ?? [];
 $success = isset($_SESSION['quote_success']) && $_SESSION['quote_success'] === true;
 unset($_SESSION['quote_errors'], $_SESSION['quote_old'], $_SESSION['quote_success']);
+$queryProductMap = [
+    'beer-mats' => 'Beer Mats',
+    'premium-coasters' => 'Premium Reusable Coasters',
+];
+$queryProduct = isset($_GET['product']) && is_string($_GET['product']) ? $_GET['product'] : '';
+$selectedProduct = isset($old['product_service']) && is_string($old['product_service'])
+    ? $old['product_service']
+    : ($queryProductMap[$queryProduct] ?? '');
 $productOptions = [
     'Printed Glassware',
     'Printed Glass Bottles',
@@ -52,6 +60,7 @@ $productOptions = [
     'Plastic Drinkware',
     'Ceramics',
     'Beer Mats',
+    'Premium Reusable Coasters',
     'Bespoke / Special Project',
     'Other',
 ];
@@ -205,7 +214,7 @@ $artworkOptions = [
                             <select id="product_service" name="product_service" required aria-required="true"<?= errorAttributes($errors, 'product_service') ?>>
                                 <option value="">Select an option</option>
                                 <?php foreach ($productOptions as $option): ?>
-                                    <option value="<?= escapeHtml($option) ?>"<?= (($old['product_service'] ?? '') === $option) ? ' selected' : '' ?>><?= escapeHtml($option) ?></option>
+                                    <option value="<?= escapeHtml($option) ?>"<?= ($selectedProduct === $option) ? ' selected' : '' ?>><?= escapeHtml($option) ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <?= fieldError($errors, 'product_service') ?>
