@@ -133,7 +133,7 @@ const productDetails = {
                 text7: "<strong>IDEAL FOR: </strong>various industries, including hospitality, corporate events and promotional campaigns." 
             },
             bottles: { 
-                link: "mailto:info@glassprinting.ie", 
+                link: "contact.php#quote-form",
                 button: "GET A QUOTE NOW", 
                 header: "Printed Glass Bottles", 
                 image: "images/bottles.jpg", 
@@ -154,7 +154,7 @@ const productDetails = {
                 text7: "<strong>IDEAL FOR: </strong>various industries, including Whiskey bottles, Premium wine bottles, Milk bottles, Oil bottles, Vitamin drink bottles." 
             },            
 "reusable-cups": { 
-    link: "mailto:info@glassprinting.ie", 
+    link: "contact.php#quote-form",
     button: "GET A QUOTE NOW", 
     header: "Printed Reusable Cups",
     icon1: "images/basedindublin.png",
@@ -175,7 +175,7 @@ const productDetails = {
     text7: "<strong>IDEAL FOR: </strong> Corporate gifts, Brand awareness, Event give-aways. Your brand will be taken wherever people take their branded cups! <br><br> <strong>Available:</strong> Printed Eco friendly water bottles, printed double walled bottles, Printed double wall travel mugs/cups." 
 },
 plastic: { 
-    link: "mailto:info@glassprinting.ie", 
+    link: "contact.php#quote-form",
     button: "GET A QUOTE NOW",
     header: "Printed Plastic", 
     image: "images/plastic.jpg",
@@ -196,7 +196,7 @@ plastic: {
     text7: "<strong>IDEAL FOR: </strong>events, festivals, large functions. Great to have as a take-home keepsake." 
 },
 cosmetics: { 
-    link: "mailto:info@glassprinting.ie",
+    link: "contact.php#quote-form",
     button: "GET A QUOTE NOW", 
     header: "Printed Cosmetic Packaging", 
     image: "images/cosmetics_product.jpg",
@@ -217,7 +217,7 @@ cosmetics: {
     text7: "<strong>FULL BRANDING PACKAGE: </strong>carrier bags, displays, swag, promo items and much more."
 },
 jars: { 
-    link: "mailto:info@glassprinting.ie", 
+    link: "contact.php#quote-form",
     button: "GET A QUOTE NOW", 
     header: "Printed Jars", 
     image: "images/jars.jpg",
@@ -238,7 +238,7 @@ jars: {
     text7: "<strong>IDEAL FOR: </strong>Food products, General storage items, Branded jars for alternative drink containers, Café and event supplies, Outdoor rustic events. <br><br> <strong>Available</strong>: Printed Jars for Cosmetic, foods, fragrance, and beverage markets." 
 },
 bespoke: { 
-    link: "mailto:info@glassprinting.ie",
+    link: "contact.php#quote-form",
     button: "GET A QUOTE NOW", 
     header: "Bespoke Print", 
     image: "images/bespoke.jpg", 
@@ -259,7 +259,7 @@ bespoke: {
     text7: "<strong>IDEAL FOR: </strong>Printed Trophies, Printed Plates, Custom printed glassware, Printed Decorative items." 
 },
     ceramic: { 
-        link: "mailto:info@glassprinting.ie", 
+        link: "contact.php#quote-form",
         button: "GET A QUOTE NOW", 
         header: "Printed Ceramic", 
         image: "images/ceramic.jpg",
@@ -283,6 +283,7 @@ bespoke: {
 
 function showProduct(product) {
     const details = productDetails[product];
+    const actionTarget = details.link === "contact.php#quote-form" ? "" : ' target="_blank"';
     const productDetailsDiv = document.getElementById('product-details');
     productDetailsDiv.innerHTML = `
         <div class="product-about-section">
@@ -320,7 +321,7 @@ function showProduct(product) {
                     <img src="${details.icon7}">
                     <p >${details.text7}</p>
                 </div>
-                <a href="${details.link}" class="product-button" target="_blank">${details.button}</a>
+                <a href="${details.link}" class="product-button"${actionTarget}>${details.button}</a>
             </div>
         </div>
     `;
