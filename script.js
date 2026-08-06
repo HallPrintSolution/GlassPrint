@@ -46,12 +46,13 @@ const indicators = document.querySelectorAll('.carousel-indicators .indicator');
 const prevArrow = document.querySelector('.arrow.prev');
 const nextArrow = document.querySelector('.arrow.next');
 const totalSlides = slides.length;
-const beerCampaignIndex = totalSlides - 2;
-const carouselDwellTime = 8000;
+const beerCampaignIndex = Array.from(slides).findIndex(slide => slide.classList.contains('beer-mats-carousel-slide'));
+const standardCarouselDwellTime = 8000;
+const beerCampaignDwellTime = 10000;
 let carouselTimerId;
 
 function updateCarouselCampaignState(index) {
-    const campaignIsActive = index === 0 || index === beerCampaignIndex;
+    const campaignIsActive = index === beerCampaignIndex;
     document.querySelector('.hero-banner').classList.toggle('beer-mats-campaign-active', campaignIsActive);
 }
 
@@ -67,6 +68,8 @@ function moveToSlide(index) {
 }
 
 function moveToNextSlide() {
+    clearTimeout(carouselTimerId);
+
     if (carouselIndex >= totalSlides - 1) {
         carouselIndex = 1;
         slidesContainer.style.transition = 'none';
@@ -77,10 +80,13 @@ function moveToNextSlide() {
         carouselIndex++;
         moveToSlide(carouselIndex);
         updateCarouselIndicators(carouselIndex);
+        restartCarouselTimer();
     }, 20);
 }
 
 function moveToPrevSlide() {
+    clearTimeout(carouselTimerId);
+
     if (carouselIndex <= 0) {
         carouselIndex = totalSlides - 2;
         slidesContainer.style.transition = 'none';
@@ -91,27 +97,30 @@ function moveToPrevSlide() {
         carouselIndex--;
         moveToSlide(carouselIndex);
         updateCarouselIndicators(carouselIndex);
+        restartCarouselTimer();
     }, 20);
+}
+
+function getCarouselDwellTime(index) {
+    return index === beerCampaignIndex ? beerCampaignDwellTime : standardCarouselDwellTime;
 }
 
 function restartCarouselTimer() {
     if (carouselTimerId) {
-        clearInterval(carouselTimerId);
+        clearTimeout(carouselTimerId);
     }
 
-    carouselTimerId = setInterval(moveToNextSlide, carouselDwellTime);
+    carouselTimerId = setTimeout(moveToNextSlide, getCarouselDwellTime(carouselIndex));
 }
 
 // Event listener for previous arrow
 prevArrow.addEventListener('click', () => {
     moveToPrevSlide();
-    restartCarouselTimer();
 });
 
 // Event listener for next arrow
 nextArrow.addEventListener('click', () => {
     moveToNextSlide();
-    restartCarouselTimer();
 });
 
 // Event listeners for indicators

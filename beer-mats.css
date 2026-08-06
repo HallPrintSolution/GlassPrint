@@ -237,6 +237,13 @@
     box-shadow: 0 28px 62px rgba(3, 45, 72, 0.22);
 }
 
+.beer-hero-media > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .beer-placeholder-round,
 .beer-placeholder-square {
     position: absolute;
@@ -387,6 +394,14 @@
     box-shadow: 0 14px 30px rgba(3, 45, 72, 0.13);
 }
 
+.beer-shape-media > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .beer-shape-round span {
     border-radius: 50%;
 }
@@ -414,23 +429,6 @@
 .beer-card-content p {
     margin: 14px 0 0;
     color: var(--beer-muted);
-}
-
-.beer-product-family {
-    margin-top: 22px !important;
-    padding: 14px 16px;
-    border-left: 4px solid var(--beer-green-bright);
-    background: var(--beer-light);
-    font-size: 0.88rem;
-}
-
-.beer-product-family strong {
-    display: block;
-    margin-bottom: 3px;
-    color: var(--beer-blue-dark);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
 }
 
 .beer-card-summary {
@@ -492,19 +490,6 @@
     margin-top: 14px;
 }
 
-.beer-button-disabled {
-    border-color: #aeb9bf;
-    background: #e7ecef;
-    color: #5f6c73;
-    cursor: not-allowed;
-}
-
-.beer-pending-note {
-    margin-top: 12px;
-    font-size: 0.88rem;
-    font-weight: 700;
-}
-
 .beer-design-section {
     background: linear-gradient(120deg, var(--beer-blue-dark), #086b9d);
     color: var(--beer-white);
@@ -525,15 +510,46 @@
     color: #b7e27c;
 }
 
-.beer-design-callout {
-    padding: clamp(30px, 4vw, 46px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
+.beer-design-media-block {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
 }
 
-.beer-design-callout .beer-button {
-    margin-top: 14px;
+.beer-design-media-placeholder {
+    position: relative;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 8 / 5;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.13)),
+        repeating-linear-gradient(45deg, transparent 0 22px, rgba(255, 255, 255, 0.04) 22px 44px);
+}
+
+.beer-design-media-placeholder span {
+    display: block;
+    width: 42%;
+    aspect-ratio: 8 / 5;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-radius: 8px;
+}
+
+.beer-design-media-placeholder small {
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .beer-premium {
@@ -601,21 +617,46 @@
 }
 
 .beer-material-card {
+    display: flex;
     min-width: 0;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     background: #223640;
+    flex-direction: column;
 }
 
 .beer-material-media {
-    display: grid;
+    position: relative;
     min-height: 190px;
-    place-items: center;
     overflow: hidden;
 }
 
-.beer-material-media span {
+.beer-material-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    animation: beer-material-crossfade 10s ease-in-out infinite;
+}
+
+.beer-material-slide:nth-child(2) {
+    animation-delay: -5s;
+}
+
+.beer-material-card:hover .beer-material-slide,
+.beer-material-card:focus-within .beer-material-slide {
+    animation-play-state: paused;
+}
+
+.beer-material-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.beer-material-slide span {
     display: block;
     width: 42%;
     aspect-ratio: 1;
@@ -624,41 +665,44 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }
 
-.beer-material-felt .beer-material-media {
+.beer-material-felt .beer-material-slide {
     background: repeating-linear-gradient(40deg, #5a6369 0 2px, #4d565c 2px 5px);
 }
 
-.beer-material-felt .beer-material-media span {
+.beer-material-felt .beer-material-slide span {
     background: #69747a;
 }
 
-.beer-material-cork .beer-material-media {
+.beer-material-cork .beer-material-slide {
     background: radial-gradient(circle, #7a5836 0 2px, transparent 3px) 0 0 / 17px 17px, #bb8a54;
 }
 
-.beer-material-cork .beer-material-media span {
+.beer-material-cork .beer-material-slide span {
     background: #c79862;
 }
 
-.beer-material-bamboo .beer-material-media {
+.beer-material-bamboo .beer-material-slide {
     background: repeating-linear-gradient(92deg, #c89a58 0 4px, #d6ae71 4px 13px);
 }
 
-.beer-material-bamboo .beer-material-media span {
+.beer-material-bamboo .beer-material-slide span {
     background: #d8b374;
 }
 
-.beer-material-leather .beer-material-media {
+.beer-material-leather .beer-material-slide {
     background: linear-gradient(145deg, #3f2e2a, #211817);
 }
 
-.beer-material-leather .beer-material-media span {
+.beer-material-leather .beer-material-slide span {
     border-radius: 12%;
     background: #493531;
 }
 
 .beer-material-content {
+    display: flex;
     padding: 24px;
+    flex: 1;
+    flex-direction: column;
 }
 
 .beer-material-content > p {
@@ -694,6 +738,78 @@
     border-top: 1px solid rgba(255, 255, 255, 0.14);
     font-size: 0.8rem !important;
     font-style: italic;
+}
+
+.beer-colour-options {
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.beer-colour-options h4 {
+    margin: 0 0 12px;
+    color: var(--beer-white);
+    font-size: 0.9rem;
+}
+
+.beer-colour-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.beer-colour-swatch {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background: var(--swatch-colour);
+    cursor: help;
+}
+
+.beer-colour-swatch::after {
+    position: absolute;
+    z-index: 2;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    width: max-content;
+    max-width: 180px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: var(--beer-white);
+    color: var(--beer-blue-dark);
+    content: attr(aria-label);
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px);
+}
+
+.beer-colour-swatch:hover::after,
+.beer-colour-swatch:focus::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.beer-colour-swatch:focus-visible {
+    outline: 3px solid #b7e27c;
+    outline-offset: 3px;
+}
+
+@keyframes beer-material-crossfade {
+    0%, 45% {
+        opacity: 1;
+    }
+
+    50%, 95% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .beer-final-cta {
@@ -794,10 +910,15 @@
 
     .beer-hero-grid {
         grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .beer-hero {
+        padding: 56px 0;
     }
 
     .beer-placeholder {
-        min-height: 400px;
+        min-height: 340px;
     }
 
     .beer-two-column,
@@ -852,6 +973,19 @@
         font-size: 1.9rem;
     }
 
+    .beer-hero {
+        padding: 44px 0;
+    }
+
+    .beer-hero-grid {
+        gap: 28px;
+    }
+
+    .beer-hero-copy > p:not(.beer-eyebrow) {
+        margin-top: 14px;
+        font-size: 1rem;
+    }
+
     .beer-actions,
     .beer-template-actions {
         align-items: stretch;
@@ -863,7 +997,7 @@
     }
 
     .beer-placeholder {
-        min-height: 320px;
+        min-height: 260px;
     }
 
     .beer-shape-grid,
@@ -891,6 +1025,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .beer-material-slide {
+        animation: none;
+    }
+
+    .beer-material-slide:nth-child(2) {
+        opacity: 0;
+    }
+
     .beer-page *,
     .beer-page *::before,
     .beer-page *::after {

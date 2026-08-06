@@ -380,6 +380,14 @@ a:hover{
     color: #fff;
 }
 
+.beer-mats-carousel-background {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+}
+
 .beer-mats-carousel-content {
     position: absolute;
     z-index: 2;
@@ -434,6 +442,7 @@ a:hover{
 
 .beer-mats-carousel-visual {
     position: absolute;
+    z-index: 1;
     top: 12%;
     right: 7%;
     width: min(34vw, 560px);
