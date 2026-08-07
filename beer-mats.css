@@ -219,66 +219,36 @@
 
 .beer-button:focus-visible,
 .beer-nav a:focus-visible,
-.beer-brand:focus-visible,
-.beer-footer a:focus-visible {
+.beer-brand:focus-visible {
     outline: 3px solid var(--beer-blue);
     outline-offset: 4px;
 }
 
-.beer-placeholder {
-    position: relative;
-    min-height: 490px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 18px;
-    background:
-        radial-gradient(circle at 18% 22%, rgba(141, 198, 63, 0.24) 0 2px, transparent 3px) 0 0 / 26px 26px,
-        linear-gradient(145deg, var(--beer-blue-dark), var(--beer-blue));
-    box-shadow: 0 28px 62px rgba(3, 45, 72, 0.22);
+.beer-hero-media {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    flex-direction: column;
 }
 
 .beer-hero-media > img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: min(100%, 620px);
+    height: auto;
     object-fit: contain;
 }
 
-.beer-placeholder-round,
-.beer-placeholder-square {
-    position: absolute;
-    display: block;
-    aspect-ratio: 1;
-    border: 3px solid rgba(255, 255, 255, 0.82);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 18px 38px rgba(0, 27, 43, 0.28);
+.beer-hero-media .beer-actions {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 22px;
 }
 
-.beer-placeholder-round {
-    top: 13%;
-    right: 9%;
-    width: 57%;
-    border-radius: 50%;
-}
-
-.beer-placeholder-square {
-    bottom: 13%;
-    left: 9%;
-    width: 51%;
-    border-color: var(--beer-green-bright);
-    border-radius: 12%;
-    transform: rotate(-8deg);
-}
-
-.beer-placeholder-label {
-    position: absolute;
-    right: 24px;
-    bottom: 20px;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.beer-hero-media .beer-button {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 0.88rem;
 }
 
 .beer-section {
@@ -380,18 +350,6 @@
     min-height: 280px;
     place-items: center;
     overflow: hidden;
-    background:
-        radial-gradient(circle at 18% 20%, rgba(141, 198, 63, 0.2) 0 2px, transparent 3px) 0 0 / 24px 24px,
-        linear-gradient(145deg, #eaf3f7, #d9e8ee);
-}
-
-.beer-shape-media span {
-    display: block;
-    width: min(45%, 220px);
-    aspect-ratio: 1;
-    border: 3px solid var(--beer-blue);
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 14px 30px rgba(3, 45, 72, 0.13);
 }
 
 .beer-shape-media > img {
@@ -400,23 +358,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.beer-shape-round span {
-    border-radius: 50%;
-}
-
-.beer-shape-square span {
-    border-radius: 10%;
-}
-
-.beer-shape-media small {
-    position: absolute;
-    bottom: 16px;
-    color: #526069;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    object-position: center;
 }
 
 .beer-card-content {
@@ -517,39 +459,21 @@
     gap: 22px;
 }
 
-.beer-design-media-placeholder {
+.beer-design-media {
     position: relative;
-    display: grid;
     width: 100%;
     aspect-ratio: 8 / 5;
-    place-items: center;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 12px;
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.13)),
-        repeating-linear-gradient(45deg, transparent 0 22px, rgba(255, 255, 255, 0.04) 22px 44px);
 }
 
-.beer-design-media-placeholder span {
+.beer-design-media > img {
     display: block;
-    width: 42%;
-    aspect-ratio: 8 / 5;
-    border: 2px solid rgba(255, 255, 255, 0.55);
-    border-radius: 8px;
-}
-
-.beer-design-media-placeholder small {
-    position: absolute;
-    right: 20px;
-    bottom: 18px;
-    left: 20px;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-align: center;
-    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 46%;
 }
 
 .beer-premium {
@@ -636,12 +560,18 @@
     position: absolute;
     inset: 0;
     display: grid;
+    padding: 14px;
     place-items: center;
+    box-sizing: border-box;
     animation: beer-material-crossfade 10s ease-in-out infinite;
 }
 
 .beer-material-slide:nth-child(2) {
     animation-delay: -5s;
+}
+
+.beer-material-media-single .beer-material-slide {
+    animation: none;
 }
 
 .beer-material-card:hover .beer-material-slide,
@@ -653,49 +583,24 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center bottom;
 }
 
-.beer-material-slide span {
-    display: block;
-    width: 42%;
-    aspect-ratio: 1;
-    border: 2px solid rgba(255, 255, 255, 0.62);
-    border-radius: 50%;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
-}
-
-.beer-material-felt .beer-material-slide {
+.beer-material-felt .beer-material-slide:first-child {
     background: repeating-linear-gradient(40deg, #5a6369 0 2px, #4d565c 2px 5px);
 }
 
-.beer-material-felt .beer-material-slide span {
-    background: #69747a;
-}
-
-.beer-material-cork .beer-material-slide {
+.beer-material-cork .beer-material-slide:first-child {
     background: radial-gradient(circle, #7a5836 0 2px, transparent 3px) 0 0 / 17px 17px, #bb8a54;
 }
 
-.beer-material-cork .beer-material-slide span {
-    background: #c79862;
-}
-
-.beer-material-bamboo .beer-material-slide {
+.beer-material-bamboo .beer-material-slide:first-child {
     background: repeating-linear-gradient(92deg, #c89a58 0 4px, #d6ae71 4px 13px);
 }
 
-.beer-material-bamboo .beer-material-slide span {
-    background: #d8b374;
-}
-
-.beer-material-leather .beer-material-slide {
+.beer-material-leather .beer-material-slide:first-child {
     background: linear-gradient(145deg, #3f2e2a, #211817);
-}
-
-.beer-material-leather .beer-material-slide span {
-    border-radius: 12%;
-    background: #493531;
 }
 
 .beer-material-content {
@@ -848,28 +753,17 @@
     color: var(--beer-white);
 }
 
-.beer-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 30px clamp(20px, 5vw, 72px);
-    background: var(--beer-blue-dark);
-    color: var(--beer-white);
-}
-
-.beer-footer div {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.beer-footer a {
-    color: var(--beer-white);
-    overflow-wrap: anywhere;
-}
-
 @media (max-width: 1120px) {
+    .beer-hero-media .beer-actions {
+        flex-wrap: wrap;
+    }
+
+    .beer-hero-media .beer-button {
+        padding-right: 22px;
+        padding-left: 22px;
+        font-size: 1rem;
+    }
+
     .beer-material-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -915,10 +809,6 @@
 
     .beer-hero {
         padding: 56px 0;
-    }
-
-    .beer-placeholder {
-        min-height: 340px;
     }
 
     .beer-two-column,
@@ -996,8 +886,8 @@
         width: 100%;
     }
 
-    .beer-placeholder {
-        min-height: 260px;
+    .beer-hero-media .beer-actions {
+        width: min(100%, 620px);
     }
 
     .beer-shape-grid,
@@ -1018,10 +908,6 @@
         columns: 1;
     }
 
-    .beer-footer {
-        flex-direction: column;
-        padding: 28px 18px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
