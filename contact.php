@@ -109,8 +109,9 @@ $artworkOptions = [
     })(window,document,'script','dataLayer','GTM-P6N2FSCZ');</script>
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
-<body class="contact-page">
+<body id="top" class="contact-page">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6N2FSCZ"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,16 +254,53 @@ $artworkOptions = [
                 </form>
             </section>
         </div>
+
+        <section class="contact-location" aria-labelledby="contact-location-heading">
+            <div class="contact-location-details">
+                <p class="contact-eyebrow">Location</p>
+                <h2 id="contact-location-heading">Visit Us</h2>
+                <p>Our Dublin production team is based in South City Business Centre in Tallaght.</p>
+                <address>
+                    <strong>GlassPrinting.ie</strong>
+                    <span>Unit B6, South City Business Centre</span>
+                    <span>Whitestown Way, Tallaght</span>
+                    <span>Dublin 24</span>
+                </address>
+                <a href="tel:+35314045145">01 404 5145</a>
+                <a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a>
+            </div>
+            <div class="contact-location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.5468905484363!2d-6.375996299999999!3d53.2797378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486774ced52146ad%3A0xec483c20144a6cc9!2sHall%20Print%20Solutions!5e0!3m2!1sen!2sie!4v1721646984410!5m2!1sen!2sie" title="Map showing GlassPrinting.ie at South City Business Centre in Tallaght, Dublin" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
     </main>
 
-    <footer class="contact-footer">
-        <div>
-            <strong>GlassPrinting.ie</strong>
-            <span>Unit B6 South City Business Centre, Whitestown Way, Tallaght, Dublin, D24 V227</span>
+    <footer class="site-footer" id="footer">
+        <div class="site-footer-main">
+            <div class="site-footer-brand">
+                <a class="site-footer-wordmark" href="index.html">GlassPrinting.ie</a>
+                <p>Professional glass and promotional print solutions produced in Dublin.</p>
+                <div class="site-footer-social" aria-label="Social media">
+                    <a href="https://www.instagram.com/glassprinting.ie/" target="_blank" rel="noopener noreferrer" aria-label="GlassPrinting.ie on Instagram"><img src="images/igw.png" alt="" width="20" height="20"><span>Instagram</span></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="GlassPrinting.ie on LinkedIn"><img src="images/liw.png" alt="" width="20" height="20"><span>LinkedIn</span></a>
+                </div>
+            </div>
+            <nav class="site-footer-links" aria-label="Footer navigation">
+                <h2>Quick Links</h2>
+                <a href="index.html">Home</a>
+                <a href="beer-mats.html">Beer Mats</a>
+                <a href="contact.php">Contact</a>
+            </nav>
+            <div class="site-footer-contact">
+                <h2>Contact</h2>
+                <address><strong>GlassPrinting.ie</strong><span>Unit B6, South City Business Centre</span><span>Whitestown Way, Tallaght</span><span>Dublin 24</span></address>
+                <a href="tel:+35314045145">01 404 5145</a>
+                <a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a>
+            </div>
         </div>
-        <div>
-            <a href="tel:+35314045145">01 404 5145</a>
-            <a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a>
+        <div class="site-footer-bottom">
+            <span>&copy; 2026 GlassPrinting.ie</span>
+            <a class="back-to-top" id="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
     </footer>
 </body>

@@ -380,6 +380,14 @@ a:hover{
     color: #fff;
 }
 
+.beer-mats-carousel-background {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+}
+
 .beer-mats-carousel-content {
     position: absolute;
     z-index: 2;
@@ -434,35 +442,319 @@ a:hover{
 
 .beer-mats-carousel-visual {
     position: absolute;
-    top: 12%;
-    right: 7%;
-    width: min(34vw, 560px);
-    aspect-ratio: 1;
+    z-index: 1;
+    top: 7%;
+    right: 4%;
+    width: min(41vw, 680px);
+    height: 86%;
 }
 
-.beer-mats-carousel-disc {
+.carousel .slides .beer-mats-carousel-image {
     position: absolute;
     display: block;
-    aspect-ratio: 1;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 22px 48px rgba(0, 24, 38, 0.3);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 22px 20px rgba(0, 24, 38, 0.3));
 }
 
-.beer-mats-carousel-disc-round {
-    top: 2%;
-    right: 2%;
-    width: 62%;
-    border-radius: 50%;
+.carousel .slides .beer-mats-carousel-image-square {
+    top: 0;
+    right: -4%;
+    width: 100%;
 }
 
-.beer-mats-carousel-disc-square {
-    bottom: 3%;
-    left: 2%;
-    width: 57%;
+.carousel .slides .beer-mats-carousel-image-round {
+    right: 8%;
+    bottom: 0;
+    width: 86%;
+}
+
+/* Permanent Beer Mats promotion below the homepage carousel */
+.beer-mats-promo {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(141, 198, 63, 0.2), transparent 28%),
+        linear-gradient(118deg, #023a57 0%, #075f8a 62%, #0e76bc 100%);
+    color: #fff;
+}
+
+.beer-mats-promo,
+.beer-mats-promo * {
+    box-sizing: border-box;
+}
+
+.beer-mats-promo::before {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 25px 25px;
+    content: "";
+    mask-image: linear-gradient(90deg, transparent 28%, #000 100%);
+    pointer-events: none;
+}
+
+.beer-mats-promo-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(calc(100% - 80px), 1380px);
+    min-height: 520px;
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1.3fr) minmax(400px, 1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 80px);
+    padding: clamp(62px, 6vw, 94px) 0;
+}
+
+.beer-mats-promo-copy {
+    max-width: 790px;
+}
+
+.beer-mats-promo-eyebrow {
+    margin: 0 0 14px;
+    color: #b7dc80;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.beer-mats-promo .beer-mats-promo-copy h2 {
+    max-width: 750px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: clamp(2.45rem, 4.4vw, 4.8rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    text-transform: none;
+}
+
+.beer-mats-promo-body {
+    max-width: 720px;
+    margin: 24px 0 0;
+    color: #f0f7fa;
+    font-size: clamp(1rem, 1.25vw, 1.18rem);
+    line-height: 1.65;
+}
+
+.beer-mats-promo-studio {
+    max-width: 710px;
+    margin-top: 22px;
+    padding-left: 15px;
+    border-left: 3px solid #8dc63f;
+}
+
+.beer-mats-promo-studio p {
+    margin: 0;
+    color: #e6f1f5;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.beer-mats-promo-studio .beer-mats-promo-studio-label {
+    margin-bottom: 4px;
+    color: #b7dc80;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.beer-mats-promo-details {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: #d8eaf2;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.beer-mats-promo-details span {
+    padding: 0 0.4em;
+    color: #8dc63f;
+}
+
+.beer-mats-promo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.beer-mats-promo-button {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 23px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.beer-mats-promo-button-primary {
     border-color: #8dc63f;
-    border-radius: 12%;
-    transform: rotate(-9deg);
+    background: #8dc63f;
+    color: #fff;
+}
+
+.beer-mats-promo-button-primary:hover {
+    border-color: #74a62d;
+    background: #74a62d;
+}
+
+.beer-mats-promo-button-secondary {
+    border-color: rgba(255, 255, 255, 0.82);
+    color: #fff;
+}
+
+.beer-mats-promo-button-secondary:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #034d71;
+}
+
+.beer-mats-promo-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+.beer-mats-promo-visual {
+    position: relative;
+    min-width: 0;
+    min-height: 390px;
+}
+
+.beer-mats-promo-image {
+    position: absolute;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 22px 20px rgba(0, 24, 38, 0.3));
+}
+
+.beer-mats-promo-image-square {
+    top: -4%;
+    right: -6%;
+    width: 101%;
+}
+
+.beer-mats-promo-image-round {
+    right: 8%;
+    bottom: -4%;
+    width: 87%;
+}
+
+@media (max-width: 1024px) {
+    .beer-mats-promo-inner {
+        width: min(calc(100% - 56px), 1380px);
+        min-height: 480px;
+        grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+        gap: 30px;
+    }
+
+    .beer-mats-promo .beer-mats-promo-copy h2 {
+        font-size: clamp(2.25rem, 4.8vw, 3.6rem);
+    }
+
+    .beer-mats-promo-visual {
+        min-height: 340px;
+    }
+
+    .beer-mats-promo-image-square {
+        top: 0;
+        right: -2%;
+        width: 94%;
+    }
+
+    .beer-mats-promo-image-round {
+        right: 10%;
+        bottom: -2%;
+        width: 82%;
+    }
+}
+
+@media (max-width: 768px) {
+    .beer-mats-promo-inner {
+        width: min(calc(100% - 40px), 680px);
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 38px;
+        padding: 58px 0 48px;
+    }
+
+    .beer-mats-promo-copy {
+        max-width: 660px;
+    }
+
+    .beer-mats-promo-visual {
+        width: min(100%, 580px);
+        min-height: 390px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .beer-mats-promo-inner {
+        width: min(calc(100% - 32px), 680px);
+        gap: 30px;
+        padding: 48px 0 36px;
+    }
+
+    .beer-mats-promo .beer-mats-promo-copy h2 {
+        margin: 0;
+        padding: 0;
+        font-size: clamp(2.05rem, 10.5vw, 2.7rem);
+        line-height: 1.08;
+        text-transform: none;
+    }
+
+    .beer-mats-promo-body {
+        margin-top: 20px;
+        font-size: 0.98rem;
+    }
+
+    .beer-mats-promo-details {
+        font-size: 0.82rem;
+    }
+
+    .beer-mats-promo-details span {
+        padding: 0 0.2em;
+    }
+
+    .beer-mats-promo-actions {
+        align-items: stretch;
+        flex-direction: column;
+        margin-top: 26px;
+    }
+
+    .beer-mats-promo-button {
+        width: 100%;
+        min-height: 52px;
+    }
+
+    .beer-mats-promo-visual {
+        min-height: 270px;
+    }
+
+    .beer-mats-promo-image-square {
+        right: -2%;
+        width: 94%;
+    }
+
+    .beer-mats-promo-image-round {
+        right: 10%;
+        width: 82%;
+    }
 }
 
 @media (max-width: 700px) {
@@ -513,10 +805,16 @@ a:hover{
     }
 
     .beer-mats-carousel-visual {
-        top: 20%;
-        right: -3%;
-        width: 35%;
-        opacity: 0.6;
+        top: auto;
+        right: 2%;
+        bottom: 6%;
+        width: 40%;
+        height: 58%;
+        opacity: 0.72;
+    }
+
+    .carousel .slides .beer-mats-carousel-image-square {
+        right: 0;
     }
 
     .beer-mats-campaign-active .beer-mats-carousel-content {
@@ -1033,62 +1331,6 @@ padding: 14px 0;
     height: auto;
 }
 
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #0e76bc;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-}
-.back-to-top:hover {
-    background-color: #8dc63f;
-}
-
-/* Footer Styles */
-.footer-wrapper {
-    background-color: #0e76bc;
-}
-.footer {
-    color: #fff;
-    padding: 20px;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.footer-left {
-    flex-direction: column;
-    align-items: flex-start;
-}
-.footer .logo {
-    height: 40px;
-}
-.footer .contact-info {
-    margin-top: 10px;
-}
-.footer .contact-info div {
-    margin-bottom: 10px;
-}
-.footer .social-icons {
-    margin-left: 0;
-}
-.footer .social-icons a {
-    color: #fff;
-}
-.footer-right iframe {
-    width: 300px;
-    height: 200px;
-    border: 0;
-}
-
 /* Media Queries for Responsivity */
 @media (max-width: 1200px) {
     .header, .section {
@@ -1214,15 +1456,6 @@ padding: 14px 0;
         height: 125px;
         margin: 10px 10px; /* Adjust margins for consistent spacing */
     }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-right iframe {
-        width: 100%;
-        height: 150px;
-    }
-    
     .product-about-section {
         flex-direction: column;
         align-items: center;
@@ -1310,15 +1543,6 @@ padding: 14px 0;
         max-width: 80px;
     }
 
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-right iframe {
-        width: 100%;
-        height: 150px;
-    }
 }
 
 @media (max-width: 375px) {
