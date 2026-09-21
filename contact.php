@@ -182,8 +182,9 @@ $artworkOptions = [
                     </div>
                 <?php endif; ?>
 
-                <form class="contact-form" action="submit-quote.php" method="post">
+                <form class="contact-form" action="submit-quote.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="<?= escapeHtml($_SESSION['quote_csrf_token']) ?>">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="8388608">
                     <div class="contact-honeypot" aria-hidden="true">
                         <label for="website">Leave this field empty</label>
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -246,6 +247,14 @@ $artworkOptions = [
                         <label for="project_details">Project Details <span aria-hidden="true">*</span></label>
                         <textarea id="project_details" name="project_details" rows="7" maxlength="3000" required aria-required="true"<?= errorAttributes($errors, 'project_details') ?>><?= escapeHtml((string) ($old['project_details'] ?? '')) ?></textarea>
                         <?= fieldError($errors, 'project_details') ?>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="artwork_file">Attach Logo or Artwork <span class="contact-optional">Optional</span></label>
+                        <input type="file" id="artwork_file" name="artwork_file" accept=".png,.jpg,.jpeg,.pdf,.svg"<?= errorAttributes($errors, 'artwork_file') ?>>
+                        <p class="contact-field-help">PNG, JPG, PDF or SVG · Maximum 8 MB</p>
+                        <p class="contact-field-help">Don’t have finished artwork? You can still submit your request and our in-house design studio can help prepare it.</p>
+                        <?= fieldError($errors, 'artwork_file') ?>
                     </div>
 
                     <p class="contact-privacy">By submitting this form, you agree that GlassPrinting.ie may use the information provided to respond to your enquiry.</p>

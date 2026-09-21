@@ -297,6 +297,17 @@
     font-weight: 700;
 }
 
+.contact-field-help {
+    margin: 7px 0 0;
+    color: #5b6971;
+    font-size: 0.84rem;
+}
+
+.contact-field input[type='file'] {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .contact-field input:focus,
 .contact-field select:focus,
 .contact-field textarea:focus,
