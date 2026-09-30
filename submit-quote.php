@@ -264,7 +264,7 @@ if (!empty($errors)) {
 }
 
 date_default_timezone_set('Europe/Dublin');
-$recipient = 'info@glassprinting.ie';
+$recipient = 'sales@glassprinting.ie';
 $sender = 'info@glassprinting.ie';
 $subject = 'New GlassPrinting.ie Quote Request — ' . $values['company_name'];
 $bodyLines = [
