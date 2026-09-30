@@ -158,7 +158,7 @@ $artworkOptions = [
                     </div>
                     <div>
                         <dt>Email</dt>
-                        <dd><a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a></dd>
+                        <dd><a href="mailto:sales@glassprinting.ie">sales@glassprinting.ie</a></dd>
                     </div>
                 </dl>
             </section>
@@ -276,7 +276,7 @@ $artworkOptions = [
                     <span>Dublin 24</span>
                 </address>
                 <a href="tel:+35314045145">01 404 5145</a>
-                <a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a>
+                <a href="mailto:sales@glassprinting.ie">sales@glassprinting.ie</a>
             </div>
             <div class="contact-location-map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.5468905484363!2d-6.375996299999999!3d53.2797378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486774ced52146ad%3A0xec483c20144a6cc9!2sHall%20Print%20Solutions!5e0!3m2!1sen!2sie!4v1721646984410!5m2!1sen!2sie" title="Map showing GlassPrinting.ie at South City Business Centre in Tallaght, Dublin" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -304,7 +304,7 @@ $artworkOptions = [
                 <h2>Contact</h2>
                 <address><strong>GlassPrinting.ie</strong><span>Unit B6, South City Business Centre</span><span>Whitestown Way, Tallaght</span><span>Dublin 24</span></address>
                 <a href="tel:+35314045145">01 404 5145</a>
-                <a href="mailto:info@glassprinting.ie">info@glassprinting.ie</a>
+                <a href="mailto:sales@glassprinting.ie">sales@glassprinting.ie</a>
             </div>
         </div>
         <div class="site-footer-bottom">
