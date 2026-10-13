@@ -154,7 +154,7 @@ const productDetails = {
                 icon5: "images/highquality.png",
                 icon6: "images/ecofriendly.png", 
                 icon7: "images/variety.png",
-                text: "We offer a wide and premium range of glassware to perfectly match your brand. From elegant wine glasses to trendy beer glasses, our selection covers all your needs. Explore our catalogue below for <strong>premium glass branding in Ireland</strong>.<br><br>Already have the perfect glass? We can print your custom design on it.<br><br>We supply printed beer glasses to pubs, breweries, distilleries, hotels, and restaurants. Additionally, we can print logos on wine glasses with integrated 170ml measures, allowing your staff to pour with precision without needing to measure.",
+                text: "We offer a wide and premium range of glassware to perfectly match your brand. From elegant wine glasses to trendy beer glasses, our selection covers all your needs. Explore our catalogue below for <strong>premium glass branding in Ireland</strong>.<br><br>Already have the perfect glass? We can print your custom design on it.<br><br>We supply printed beer glasses to pubs, breweries, distilleries, hotels, and restaurants. We can also print logos alongside measurement marks on wine glasses; contact us to confirm the specific glass and measurement requirements.",
                 text1: "<strong>BASED IN DUBLIN</strong>",
                 text2: "<strong>FAST LEAD TIMES</strong>",
                 text3: "<strong>LOW MOQs</strong>",

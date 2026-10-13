@@ -5,7 +5,7 @@
         return;
     }
 
-    const productionOrigin = 'https://glassprinting.ie/';
+    const productionOrigin = 'https://www.glassprinting.ie/';
 
     function routeContactLinks(root) {
         const links = [];

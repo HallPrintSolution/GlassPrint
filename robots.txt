@@ -1,4 +1,39 @@
-User-agent: *
-Disallow:
+Sitemap: https://www.glassprinting.ie/sitemap.xml
 
-Sitemap: https://glassprinting.ie/sitemap.xml
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Google-Extended affects Gemini model training and grounding, not Google Search crawling.
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# CCBot collects pages for the Common Crawl corpus, which can be reused downstream.
+User-agent: CCBot
+Disallow: /

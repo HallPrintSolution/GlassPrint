@@ -85,14 +85,14 @@ $artworkOptions = [
     <meta property="og:url" content="https://www.glassprinting.ie/contact.php">
     <meta property="og:image" content="https://www.glassprinting.ie/images/banner1.jpg">
     <meta property="og:site_name" content="GlassPrinting.ie">
-    <meta property="og:image:alt" content="Custom printed glass bottles, glasses and jars by GlassPrinting.ie in Dublin">
+    <meta property="og:image:alt" content="GlassPrinting.ie wordmark in blue and green">
     <meta property="og:image:width" content="1900">
     <meta property="og:image:height" content="840">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact &amp; Request a Quote | GlassPrinting.ie">
     <meta name="twitter:description" content="Contact GlassPrinting.ie in Dublin or request a quote for custom printed bottles, glassware, jars, packaging, Beer Mats and bespoke printing projects.">
     <meta name="twitter:image" content="https://www.glassprinting.ie/images/banner1.jpg">
-    <meta name="twitter:image:alt" content="Custom printed glass bottles, glasses and jars by GlassPrinting.ie in Dublin">
+    <meta name="twitter:image:alt" content="GlassPrinting.ie wordmark in blue and green">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDT5ESTHDC"></script>
     <script>
