@@ -76,6 +76,13 @@ $artworkOptions = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicons/favicon-512.png" sizes="512x512">
     <meta name="description" content="Contact GlassPrinting.ie in Dublin or request a quote for custom printed bottles, glassware, jars, packaging, Beer Mats and bespoke printing projects.">
     <title>Contact &amp; Request a Quote | GlassPrinting.ie</title>
     <link rel="canonical" href="https://www.glassprinting.ie/contact.php">
@@ -94,12 +101,12 @@ $artworkOptions = [
     <meta name="twitter:image" content="https://www.glassprinting.ie/images/banner1.jpg">
     <meta name="twitter:image:alt" content="GlassPrinting.ie wordmark in blue and green">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDT5ESTHDC"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSQNERBXYB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-KDT5ESTHDC');
+        gtag('config', 'G-VSQNERBXYB');
     </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
